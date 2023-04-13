@@ -55,20 +55,6 @@ The admin dashboard is used to modify all tables such as Students, Teachers, Dep
 
 
 ## Screenshots
-
-### Teacher Page
-
-![alt text](https://imgur.com/pMAoEbG.png)
-
-
-### Student Page
-
-![alt text](https://imgur.com/isL9cjz.png)
-
-
-
-### Admin Page
-
-![alt text](https://imgur.com/sDvDc9N.png)
+Refer the submitted report.
 
 
