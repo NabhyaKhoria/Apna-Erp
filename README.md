@@ -3,7 +3,7 @@ Apna ERP is an online web tool to function as a college erp. The system’s stru
 
 ## Installation
 
-Python need to be installed
+Python need to be installed.
 Requirements.txt packages need to be installed
 
 ```bash
