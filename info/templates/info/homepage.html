@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard</title>
+      {% load static %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+    <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+<!-- CSS Files -->
+<link href="{% static 'info/home/vendor/aos/aos.css' %}" rel="stylesheet">
+<link href="{% static 'info/home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'info/home/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'info/home/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+<link href="{% static 'info/home/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+<link href="{% static 'info/home/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+<!--Main CSS File -->
+<link href="{% static 'info/home/css/style.css' %}" rel="stylesheet"> 
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">CollegeERP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+
+    <section id="topbar" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact.iic@iitkgp.ac.in</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 32222-81019/81018/81017</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="https://twitter.com/IITKgp" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/IITKgp/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.linkedin.com/school/indian-institute-of-technology-kharagpur/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></i></a>
+        </div>
+      </div>
+    </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center" >
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'index' %}">Apna ERP</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link  text-capitalize active" href="#">{{ request.user.student.name }}</a></li>
+          <li><a class="nav-link " href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+
+
+<br><br><br>
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header
+      <header class="jumbotron my-4">
+        <h1 class="display-3 text-capitalize">Welcome {{ request.user.student.name }}</h1>
+{#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#}
+{#        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>#}
+      </header> -->
+
+      <!-- Page Features -->
+      <!-- <div class="row text-center">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 'attendance' request.user.student.USN %}">
+                <img class="card-img-top" src="{% static 'info/images/attendance2.jpg' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Attendance</h4>
+              <p class="card-text">View the attendance status for each of your courses. The attendance of each course is
+                  also displayed as list of classes that were conducted.</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'attendance' request.user.student.USN %}"> View Attendance</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 'marks_list' request.user.student.USN %}">
+                <img class="card-img-top" src="{% static 'info/images/marks.jpg' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Marks</h4>
+              <p class="card-text">View the marks obtained for each of your courses. These include the marks of 3
+                  internal assessment, 2 events and the Semester End Exam  </p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'marks_list' request.user.student.USN %}">View Marks</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                <img class="card-img-top" src="{% static 'info/images/timetable.png' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">TimeTable</h4>
+              <p class="card-text">View the timetable in a tabular form. The timetable displays all the courses of the
+                  student and the time and day at which they are conducted.</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'timetable' request.user.student.class_id_id %}">View TimeTable</a>
+            </div>
+          </div>
+        </div> -->
+
+
+      </div>
+      <!-- /.row -->
+
+    <!-- /.container -->
+
+    <div class="traineeship">
+      <div class="process-row">
+          <div class="activity animate-from-bottom__0">
+                <div class="relative-block">
+                <a href="{% url 'attendance' request.user.student.USN %}">
+                  <div class="activity-icon">
+                      <!-- <img alt="An image" src="{% static '/info/homepage/img/calendar.png' %}" style="width:90px; height:auto; color:white"> -->
+                      <i class="bi bi-calendar-check" style="color:white; font-size:90px; padding-bottom:0; margin-bottom:0px; bottom:0; margin-right:15px;"></i>
+                  </div>
+                  <div class="inactive">
+                      <div class="title">Attendance</div>
+                  </div>
+                  <div class="active">
+                      <div class="title">Attendance</div>
+                      <div class="sub-title">View the attendance status for each of your courses. The attendance of each course is
+                        also displayed as list of classes that were conducted.</div>
+                  </div>
+                </a>
+              </div>
+          </div>
+          <div class="activity animate-from-bottom__1">
+            <div class="relative-block">
+                <a href="{% url 'marks_list' request.user.student.USN %}">
+                  <div class="activity-icon">
+                      <!-- <img alt="An image" src="https://i.ibb.co/s2nghrT/ad-operations-process-strategy-activation.png" alt="ad-operations-process-strategy-activation"> -->
+                      <i class="bi bi-clipboard2-check" style="color:white; font-size:90px; padding-bottom:0; margin-bottom:0px; bottom:0; margin-right:15px;"></i>
+                  </div>
+                  <div class="inactive">
+                      <div class="title">Marks</div>
+                  </div>
+                  <div class="active">
+                      <div class="title">Marks</div>
+                      <div class="sub-title">View the marks obtained for each of your courses. These include the marks of 3
+                        internal assessment, 2 events and the Semester End Exam  </div>
+      
+                  </div>
+                </a>
+              </div>
+          </div>
+          <div class="activity animate-from-bottom__2">
+            <div class="relative-block">
+                <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                  <div class="activity-icon">
+                      <!-- <img alt="An image" src="https://i.ibb.co/ZWp3Yts/ad-operations-process-strategy.png"> -->
+                      <i class="bi bi-calendar-week" style="color:white; font-size:90px; padding-bottom:0; margin-bottom:0px; bottom:0; margin-right:15px;"></i>
+
+                  </div>
+                  <div class="inactive">
+                      <div class="title">Timetable</div>
+                  </div>
+                  <div class="active">
+                      <div class="title">Timetable</div>
+                      <div class="sub-title">View the timetable in a tabular form. The timetable displays all the courses of the
+                        student and the time and day at which they are conducted.</div>
+                  </div>
+                </a>
+              </div>
+          </div>
+      </div>
+      </div>
+    
+
+
+
+
+
+
+
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="/accounts/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Starts -->
+    <footer id="footer" style="background-color: #f6f9fe;">
+    <div class="footer-top" style="background-color: #f6f9fe;" >
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3>IIT Kharagpur</h3>
+            <p>
+              Kharagpur <br>
+              West Bengal, 721302<br>
+              India <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@iitkgp.ac.in<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}#about">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Check out the various handles for important news.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/IITKgp" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/IITKgp/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.youtube.com/@IITKharagpurOnline" class="google-plus" target="_blank"><i class="bx bxl-youtube"></i></a>
+              <a href="https://www.linkedin.com/school/indian-institute-of-technology-kharagpur/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>IIT KGP</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://linkedin.com/in/nabhya-khoria-30a601218/" target="_blank">Nabhya Khoria</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  
+    <!-- Bootstrap core JavaScript -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+      <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'info/home/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'info/home/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'info/home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'info/home/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'info/home/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'info/home/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'info/home/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'info/home/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'info/home/js/main.js' %}"></script>
+
+  </body>
+
+</html>
